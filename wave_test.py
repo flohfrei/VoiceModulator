@@ -3,7 +3,7 @@ import struct
 import random
 import math
 
-with wave.open('/home/user1/projects/VoiceModulator/testfile2.wav','wb') as wfile:
+with wave.open('testfile.wav','wb') as wfile:
     sampleRate=44100.0 #hertz
     duration=4.0 #seconds
     frequency = 440.0 #hertz
@@ -11,10 +11,10 @@ with wave.open('/home/user1/projects/VoiceModulator/testfile2.wav','wb') as wfil
     wfile.setsampwidth(2)
     wfile.setframerate(sampleRate)
     #white noise
-    # for i in range(99999):
-    #     val = random.randint(-32767,32767)
-    #     data = struct.pack('<h',val)
-    #     wfile.writeframesraw(data)
+    for i in range(99999):
+        val = random.randint(-32767,32767)
+        data = struct.pack('<h',val)
+        wfile.writeframesraw(data)
 
 # ding_wav = wave.open(fname, 'rb')
 # ding_data = ding_wav.readframes(ding_wav.getnframes())
